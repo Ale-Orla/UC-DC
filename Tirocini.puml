@@ -1,0 +1,28 @@
+@startuml
+:Azienda: as A
+:Responsbile Tirocini: as RT
+:Studenti: as S
+
+(Proporre offerta di tirocinio) as Proposta
+(Approvare/Rifiutare offerta) as Offerta
+(Visualizzare offerte accettate) as Visualiz
+(Accordarsi sull'offerta) as Accordo
+(Assegnare studente al tirocinio) as Assegnazione
+(Approvare/Rifiutare accoppiamento) as Accoppiamento
+(Stampare accordo) as StampaAccordo
+
+A --> Proposta
+RT --> Offerta
+Offerta --> A
+Offerta --> Visualiz
+S --> Visualiz
+S --> Accordo
+A --> Assegnazione
+RT --> Accoppiamento
+Accoppiamento --> Assegnazione
+Accoppiamento --> StampaAccordo
+StampaAccordo --> A
+StampaAccordo --> S
+StampaAccordo --> RT
+
+@enduml
